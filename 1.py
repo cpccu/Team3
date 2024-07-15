@@ -12,7 +12,6 @@ class Color:
     YELL = '\033[33m'
     MAG = '\033[35m'
 
-
 def display_banner():
     banner = f"""
     {Color.HEADER}===============================
@@ -25,7 +24,7 @@ def get_computer_choice():
     return random.choice(['rock', 'paper', 'scissors'])
 
 def get_user_choice():
-    user_choice = input(f"{Color.CYAN}Enter your choice ({Color.OKBLUE}rock,paper, {Color.YELL}or {Color.CYAN}scissors): {Color.ENDC}").lower()
+    user_choice = input(f"{Color.CYAN}Enter your choice ({Color.OKBLUE}rock, paper, {Color.YELL}or {Color.CYAN}scissors): {Color.ENDC}").lower()
     while user_choice not in ['rock', 'paper', 'scissors']:
         user_choice = input(f"{Color.FAIL}Invalid choice. Please enter rock, paper, or scissors: {Color.ENDC}").lower()
     return user_choice
@@ -42,12 +41,18 @@ def determine_winner(user_choice, computer_choice):
 
 def play_game():
     display_banner()
-    computer_choice = get_computer_choice()
-    user_choice = get_user_choice()
-    print(f"\n{Color.MAG}Computer chose: {computer_choice}")
-    print(f"You chose:{Color.CYAN} {user_choice}")
-    result = determine_winner(user_choice, computer_choice)
-    print(result)
+    while True:
+        computer_choice = get_computer_choice()
+        user_choice = get_user_choice()
+        print(f"\n{Color.MAG}Computer chose: {computer_choice}")
+        print(f"You chose: {Color.CYAN}{user_choice}{Color.ENDC}")
+        result = determine_winner(user_choice, computer_choice)
+        print(result)
+
+        play_again = input(f"{Color.YELL}\nDo you want to play again? (yes/no): {Color.ENDC}").lower()
+        if play_again != 'yes':
+            print(f"{Color.HEADER}Thanks for playing! Goodbye!{Color.ENDC}")
+            break
 
 if __name__ == "__main__":
     play_game()
