@@ -2,8 +2,8 @@
 
 ## Team Members
 
-- **Abm Mojahidul Islam Nayem** (58 Batch) - Phone: 01706168180
-- **Adil Ahnaf Himel** (62 Batch) - Phone: 01909218546
+- **Abm Mojahidul Islam Nayem** (58 Batch) 
+- **Adil Ahnaf Himel** (62 Batch)
 
 ## Project Overview
 
